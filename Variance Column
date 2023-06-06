@@ -1,0 +1,13 @@
+Variance Amount = 
+SWITCH(
+    TRUE(),
+    'Exhbit IVa'[Fiscal Year]="FY23 Actual" &&'Exhbit IVa'[Class]="Personnel Expense",-'Exhbit IVa'[Amount],
+    'Exhbit IVa'[Fiscal Year]="FY23 Actual" &&'Exhbit IVa'[Class]="Operating Expense",-'Exhbit IVa'[Amount],
+    'Exhbit IVa'[Fiscal Year]="FY23 Actual" &&'Exhbit IVa'[Class]="Transfers",-'Exhbit IVa'[Amount],
+    'Exhbit IVa'[Fiscal Year]="FY23 Actual",'Exhbit IVa'[Amount],
+    'Exhbit IVa'[Fiscal Year]="FY23 Budget YTD" &&'Exhbit IVa'[Class]="Personnel Expense",'Exhbit IVa'[Amount],
+    'Exhbit IVa'[Fiscal Year]="FY23 Budget YTD" &&'Exhbit IVa'[Class]="Operating Expense",'Exhbit IVa'[Amount],
+    'Exhbit IVa'[Fiscal Year]="FY23 Budget YTD" &&'Exhbit IVa'[Class]="Transfers",'Exhbit IVa'[Amount],
+    'Exhbit IVa'[Fiscal Year]="FY23 Budget YTD",-'Exhbit IVa'[Amount],
+    0
+)
